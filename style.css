@@ -29,7 +29,7 @@ section {
 .camView {
   position: relative;
   float: left;
-  width: calc(100% - 20px);
+  width: calc(100% - 5px);
   margin: 10px;
   cursor: pointer;
 }
