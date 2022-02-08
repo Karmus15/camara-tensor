@@ -3,6 +3,13 @@ const liveView = document.getElementById('liveView');
 const demosSection = document.getElementById('demos');
 const enableWebcamButton = document.getElementById('webcamButton');
 
+var constraints = {
+  video: { 
+      facingMode: 'environment'
+         }
+ ,audio: false
+};
+
 // Check if webcam access is supported.
 function getUserMediaSupported() {
   return !!(navigator.mediaDevices &&
@@ -27,17 +34,20 @@ function enableCam(event) {
   
   // Hide the button once clicked.
   event.target.classList.add('removed');  
-  
-  // getUsermedia parameters to force video but not audio.
-  const constraints = {
-    video: true
-  };
 
-  // Activate the webcam stream.
-  navigator.mediaDevices.getUserMedia(constraints).then(function(stream) {
-    video.srcObject = stream;
-    video.addEventListener('loadeddata', predictWebcam);
-  });
+  // Activate the webcam stream
+  navigator.mediaDevices
+  .getUserMedia(constraints)
+  .then(function(stream) 
+      {
+          track = stream.getTracks()[0];
+          video.srcObject = stream;
+          video.addEventListener('loadeddata', predictWebcam);          
+      })
+      .catch(function(error) {
+          console.error("Algo salio mal", error);
+      });
+
 }
 
 // Store the resulting model in the global scope of our app.
