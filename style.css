@@ -1,7 +1,8 @@
-body {
-  font-family: helvetica, arial, sans-serif;
-  margin: 2em;
-  color: #3D3D3D;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
 
 h1 {
@@ -11,6 +12,7 @@ h1 {
 
 video {
   display: block;
+
 }
 
 section {
@@ -48,4 +50,19 @@ section {
   border: 1px dashed #fff;
   z-index: 1;
   position: absolute;
+}
+
+#webcamButton{
+  width: 200px;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  border-radius: 30px;
+  border: none;
+  padding: 15px 20px;
+  text-align: center;
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+  position: fixed;
+  bottom: 30px;
+  left: calc(50% - 100px);
 }
