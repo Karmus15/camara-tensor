@@ -1,8 +1,7 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
+ body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 2em;
+  color: #3D3D3D;
 }
 
 h1 {
@@ -11,9 +10,7 @@ h1 {
 }
 
 video {
-  display: inline;
-  height: 100%;
-  width: 100%;
+  display: block;
 }
 
 section {
@@ -30,34 +27,26 @@ section {
 }
 
 .camView {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+  position: relative;
+  float: left;
+  width: calc(100% - 20px);
+  margin: 10px;
+  cursor: pointer;
 }
 
-
+.camView p {
+  position: absolute;
+  padding: 5px;
+  background-color: rgba(255, 111, 0, 0.85);
+  color: #FFF;
+  border: 1px dashed rgba(255, 255, 255, 0.7);
+  z-index: 2;
+  font-size: 12px;
+}
 
 .highlighter {
   background: rgba(0, 255, 0, 0.25);
   border: 1px dashed #fff;
   z-index: 1;
   position: absolute;
-}
-
-#webcamButton{
-  position:absolute;
-  z-index: 3;
-  width: 200px;
-  background-color: black;
-  color: white;
-  font-size: 16px;
-  border-radius: 30px;
-  border: none;
-  padding: 15px 20px;
-  text-align: center;
-  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-  position: fixed;
-  bottom: 30px;
-  left: calc(50% - 100px);
 }
